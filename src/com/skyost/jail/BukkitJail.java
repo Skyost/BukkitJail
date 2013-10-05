@@ -28,7 +28,9 @@ public class BukkitJail extends JavaPlugin {
 			if(Bukkit.getWorld(config.Jail_World) == null) {
 				Bukkit.createWorld(new WorldCreator(config.Jail_World));
 			}
-			Updater updater = new Updater(this, "bukkit-jail", this.getFile(), Updater.UpdateType.DEFAULT, true);
+			if(config.CheckForUpdates) {
+				Updater updater = new Updater(this, "bukkit-jail", this.getFile(), Updater.UpdateType.DEFAULT, true);
+			}
 		}
 		catch(Exception ex) {
 			ex.printStackTrace();

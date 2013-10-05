@@ -18,6 +18,9 @@ public class ConfigFile extends Config {
 	}
 	
 	public ArrayList<String> JailedPlayers = new ArrayList<String>();
+	public ArrayList<String> TimeUnits = new ArrayList<String>();
+	
+	public boolean CheckForUpdates = true;
 	
 	public String Jail_World = "jail";
 	public int Jail_X = 0;
@@ -25,8 +28,6 @@ public class ConfigFile extends Config {
 	public int Jail_Z = 0;
 	public int Jail_Yaw = 0;
 	public int Jail_Pitch = 0;
-	
-	public ArrayList<String> TimeUnits = new ArrayList<String>();
 	
 	public boolean JailedCanInteract = false;
 	public boolean JailedCanChat = true;
