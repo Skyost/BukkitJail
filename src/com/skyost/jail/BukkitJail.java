@@ -3,10 +3,12 @@ package com.skyost.jail;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.WorldCreator;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.skyost.jail.tasks.ReleasePlayer;
@@ -58,23 +60,27 @@ public class BukkitJail extends JavaPlugin {
 						message = config.JailedMessages_1.replaceAll("/player/", player.getName());
 						sender.sendMessage(message);
 						if(player != null && player.isOnline()) {
-							player.getInventory().setContents(null);
+							player.getInventory().setContents(new ItemStack[] {
+								new ItemStack(Material.AIR)	
+							});
 							player.teleport(new Location(Bukkit.getWorld(config.Jail_World), config.Jail_X, config.Jail_Y, config.Jail_Z, config.Jail_Yaw, config.Jail_Pitch));
 							player.sendMessage(config.JailedMessages_2);
 						}
 						if(args.length >= 2) {
 							message = config.JailedMessages_9.replaceAll("/player/", sender.getName());
 							if(Utils.isNumeric(args[args.length - 1])) {
-								message = message.replaceAll("/reason/", Utils.ArrayToStr(args, args.length - 2));
+								String reason = Utils.ArrayToStr(args, args.length - 1);
+								message = message.replaceAll("/reason/", reason.substring(args[0].length() + 1));
 								player.sendMessage(message);
-								message = config.JailedMessages_10.replaceAll("/n/", args[args.length - 1]);
 								int time = Integer.parseInt(args[args.length - 1]);
-								message = message.replaceAll("/u/", Utils.getTime(time));
+								message = config.JailedMessages_10.replaceAll("/n/", String.valueOf(Utils.roundTime(time)));
+								message = message.replaceAll("/u/", Utils.getTimeUnit(time));
 								player.sendMessage(message);
 								Bukkit.getScheduler().runTaskLater(this, new ReleasePlayer(player.getName()), time * 20);
 							}
 							else {
-								message = message.replaceAll("/reason/", Utils.ArrayToStr(args, args.length - 1));
+								String reason = Utils.ArrayToStr(args, args.length - 1);
+								message = message.replaceAll("/reason/", reason.substring(args[0].length() + 1));
 								player.sendMessage(message);
 							}
 						}
@@ -118,8 +124,8 @@ public class BukkitJail extends JavaPlugin {
 						config.Jail_X = loc.getBlockX();
 						config.Jail_Y = loc.getBlockY();
 						config.Jail_Z = loc.getBlockZ();
-						config.Jail_Yaw = loc.getYaw();
-						config.Jail_Pitch = loc.getPitch();
+						config.Jail_Yaw = Math.round(loc.getYaw());
+						config.Jail_Pitch = Math.round(loc.getPitch());
 						config.save();
 						sender.sendMessage(config.JailedMessages_11);
 					}

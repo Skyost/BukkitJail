@@ -11,9 +11,10 @@ public class ConfigFile extends Config {
 		CONFIG_FILE = new File(plugin.getDataFolder(), "config.yml");
 		CONFIG_HEADER = "BukkitJail Configuration";
 		
-		TimeUnits.add("sec");
-		TimeUnits.add("hours");
-		TimeUnits.add("days");
+		TimeUnits.add("second");
+		TimeUnits.add("minute");
+		TimeUnits.add("hour");
+		TimeUnits.add("day");
 	}
 	
 	public ArrayList<String> JailedPlayers = new ArrayList<String>();
@@ -22,8 +23,8 @@ public class ConfigFile extends Config {
 	public int Jail_X = 0;
 	public int Jail_Y = 0;
 	public int Jail_Z = 0;
-	public float Jail_Yaw = 0;
-	public float Jail_Pitch = 0;
+	public int Jail_Yaw = 0;
+	public int Jail_Pitch = 0;
 	
 	public ArrayList<String> TimeUnits = new ArrayList<String>();
 	
