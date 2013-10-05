@@ -66,6 +66,20 @@ public class BukkitJail extends JavaPlugin {
 							player.teleport(new Location(Bukkit.getWorld(config.Jail_World), config.Jail_X, config.Jail_Y, config.Jail_Z, config.Jail_Yaw, config.Jail_Pitch));
 							player.sendMessage(config.JailedMessages_2);
 						}
+						if(args.length == 2) {
+							if(Utils.isNumeric(args[1])) {
+								int time = Integer.parseInt(args[1]);
+								message = config.JailedMessages_10.replaceAll("/n/", String.valueOf(Utils.roundTime(time)));
+								message = message.replaceAll("/u/", Utils.getTimeUnit(time));
+								player.sendMessage(message);
+								Bukkit.getScheduler().runTaskLater(this, new ReleasePlayer(player.getName()), time * 20);
+							}
+							else {
+								message = message.replaceAll("/reason/", args[1]);
+								player.sendMessage(message);
+							}
+							return true;
+						}
 						if(args.length >= 2) {
 							message = config.JailedMessages_9.replaceAll("/player/", sender.getName());
 							if(Utils.isNumeric(args[args.length - 1])) {
@@ -83,6 +97,7 @@ public class BukkitJail extends JavaPlugin {
 								message = message.replaceAll("/reason/", reason.substring(args[0].length() + 1));
 								player.sendMessage(message);
 							}
+							return true;
 						}
 					}
 					catch(Exception ex) {
