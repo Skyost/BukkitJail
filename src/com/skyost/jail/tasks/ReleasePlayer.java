@@ -17,16 +17,18 @@ public class ReleasePlayer implements Runnable {
 	@Override
 	public void run() {
 		Player player = Bukkit.getPlayer(playername);
-		try {
-			BukkitJail.getBukkitJailConfig().JailedPlayers.remove(playername);
-			BukkitJail.getBukkitJailConfig().save();
-			if(player != null && player.isOnline()) {
-				player.teleport(Utils.getMainWorld().getSpawnLocation());
-				player.sendMessage(BukkitJail.getBukkitJailConfig().JailedMessages_5);
+		if(BukkitJail.isJailed(player)) {
+			try {
+				BukkitJail.getBukkitJailConfig().JailedPlayers.remove(playername);
+				BukkitJail.getBukkitJailConfig().save();
+				if(player != null && player.isOnline()) {
+					player.teleport(Utils.getMainWorld().getSpawnLocation());
+					player.sendMessage(BukkitJail.getBukkitJailConfig().JailedMessages_5);
+				}
 			}
-		}
-		catch(Exception ex) {
-			ex.printStackTrace();
+			catch(Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 
