@@ -22,6 +22,7 @@ public class ConfigFile extends Config {
 	
 	public boolean CheckForUpdates = true;
 	
+	public String Jail_Server = "";
 	public String Jail_World = "jail";
 	public int Jail_X = 0;
 	public int Jail_Y = 0;
