@@ -85,6 +85,7 @@ public class Commands implements CommandExecutor {
 						message = BukkitJail.getBukkitJailConfig().JailedMessages_4.replaceAll("/player/", player.getName());
 						sender.sendMessage(message);
 						if(player != null && player.isOnline()) {
+							player.setGameMode(BukkitJail.getBukkitJailConfig().Jail_GameMode);
 							player.teleport(Utils.getMainWorld().getSpawnLocation());
 							player.sendMessage(BukkitJail.getBukkitJailConfig().JailedMessages_5);
 						}

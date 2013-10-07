@@ -2,6 +2,8 @@ package com.skyost.jail;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import org.bukkit.GameMode;
 import org.bukkit.plugin.Plugin;
 
 import com.skyost.jail.util.Config;
@@ -22,7 +24,7 @@ public class ConfigFile extends Config {
 	
 	public boolean CheckForUpdates = true;
 	
-	public String Jail_Server = "";
+	public GameMode Jail_GameMode = GameMode.CREATIVE;
 	public String Jail_World = "jail";
 	public int Jail_X = 0;
 	public int Jail_Y = 0;

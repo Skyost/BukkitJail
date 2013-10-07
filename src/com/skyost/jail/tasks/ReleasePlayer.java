@@ -22,6 +22,7 @@ public class ReleasePlayer implements Runnable {
 				BukkitJail.getBukkitJailConfig().JailedPlayers.remove(playername);
 				BukkitJail.getBukkitJailConfig().save();
 				if(player != null && player.isOnline()) {
+					player.setGameMode(BukkitJail.getBukkitJailConfig().Jail_GameMode);
 					player.teleport(Utils.getMainWorld().getSpawnLocation());
 					player.sendMessage(BukkitJail.getBukkitJailConfig().JailedMessages_5);
 				}

@@ -1,7 +1,7 @@
 name: BukkitJail
 main: com.skyost.jail.BukkitJail
 description: Simple jail plugin.
-version: 0.2.1
+version: 0.2.2
 author: Skyost
 website: http://www.skyost.eu/
 commands:
