@@ -22,6 +22,8 @@ public class ConfigFile extends Config {
 	public ArrayList<String> JailedPlayers = new ArrayList<String>();
 	public ArrayList<String> TimeUnits = new ArrayList<String>();
 	
+	public boolean CheckForUpdates = true;
+	
 	public GameMode Jail_GameMode = GameMode.CREATIVE;
 	public String Jail_World = "jail";
 	public int Jail_X = 0;
