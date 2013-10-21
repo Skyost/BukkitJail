@@ -69,14 +69,9 @@ public class Utils {
 		String str = "";
 		if(number < array.length) {
 			for(int i = 0; i != number; i++) {
-				if(i != number) {
-					str = str + array[i] + " ";
-				}
-				else {
-					str = str + array[i];
-				}
+				str = str + array[i] + " ";
 			}
-			return str;
+			return str.substring(0, str.length() - 1);
 		}
 		return null;
 	}

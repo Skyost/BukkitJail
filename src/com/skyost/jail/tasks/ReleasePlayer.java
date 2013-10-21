@@ -1,8 +1,6 @@
 package com.skyost.jail.tasks;
 
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-
 import com.skyost.jail.BukkitJail;
 import com.skyost.jail.util.Utils;
 
@@ -16,16 +14,15 @@ public class ReleasePlayer implements Runnable {
 
 	@Override
 	public void run() {
-		Player player = Bukkit.getPlayer(playername);
-		if(BukkitJail.isJailed(player)) {
+		if(BukkitJail.isJailed(playername)) {
 			try {
-				BukkitJail.getBukkitJailConfig().JailedPlayers.remove(playername);
-				BukkitJail.getBukkitJailConfig().save();
-				if(player != null && player.isOnline()) {
-					player.setGameMode(BukkitJail.getBukkitJailConfig().Jail_GameMode);
-					player.teleport(Utils.getMainWorld().getSpawnLocation());
-					player.sendMessage(BukkitJail.getBukkitJailConfig().JailedMessages_5);
+				BukkitJail.getBukkitJailConfig().JailedData.remove(playername);
+				if(Bukkit.getPlayer(playername) != null && Bukkit.getPlayer(playername).isOnline()) {
+					Bukkit.getPlayer(playername).setGameMode(Bukkit.getDefaultGameMode());
+					Bukkit.getPlayer(playername).teleport(Utils.getMainWorld().getSpawnLocation());
+					Bukkit.getPlayer(playername).sendMessage(BukkitJail.getBukkitJailConfig().JailedMessages_5);
 				}
+				BukkitJail.getBukkitJailConfig().save();
 			}
 			catch(Exception ex) {
 				ex.printStackTrace();

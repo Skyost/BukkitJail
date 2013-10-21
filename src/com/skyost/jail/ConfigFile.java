@@ -2,6 +2,7 @@ package com.skyost.jail;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.bukkit.GameMode;
 import org.bukkit.plugin.Plugin;
@@ -19,7 +20,7 @@ public class ConfigFile extends Config {
 		TimeUnits.add("day");
 	}
 	
-	public ArrayList<String> JailedPlayers = new ArrayList<String>();
+	public HashMap<String, Integer> JailedData = new HashMap<String, Integer>();
 	public ArrayList<String> TimeUnits = new ArrayList<String>();
 	
 	public boolean CheckForUpdates = true;
