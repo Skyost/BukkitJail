@@ -93,7 +93,7 @@ public class CommandsExecutor implements CommandExecutor {
 					sender.sendMessage(BukkitJail.getBukkitJailConfig().JailedMessages_3);
 				}
 			}
-			else if(cmd.getName().equalsIgnoreCase("release")) {
+			else if(cmd.getName().equalsIgnoreCase("unjail")) {
 				if(BukkitJail.getBukkitJailConfig().JailedData.get(args[0]) != null) {
 					try {
 						BukkitJail.getBukkitJailConfig().JailedData.remove(args[0]);
