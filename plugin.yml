@@ -1,7 +1,7 @@
 name: BukkitJail
 main: com.skyost.jail.BukkitJail
 description: Simple jail plugin.
-version: 0.2.4
+version: 0.2.5
 author: Skyost
 website: http://www.skyost.eu/
 commands:
@@ -9,10 +9,10 @@ commands:
   description: Jail a player.
   usage: Simply type /jail <player> [reason] [time] for jailing him.
   permission: bukkitjail.jail
- release:
-  aliases: unjail
+ unjail:
+  aliases: release
   description: Release a player.
-  usage: Simply type /release <player> (or /unjail <player>) for releasing him.
+  usage: Simply type /unjail <player> (or /release <player>) for releasing him.
   permission: bukkitjail.release
  setjail:
   description: Set the jail at your current position.

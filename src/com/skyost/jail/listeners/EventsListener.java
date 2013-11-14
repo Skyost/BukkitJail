@@ -1,4 +1,4 @@
-package com.skyost.jail;
+package com.skyost.jail.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -13,9 +13,10 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
+import com.skyost.jail.BukkitJail;
 import com.skyost.jail.util.Utils;
 
-public class Listeners implements Listener {
+public class EventsListener implements Listener {
 	
 	@EventHandler
 	private static final void onPlayerJoin(PlayerJoinEvent event) {

@@ -1,4 +1,4 @@
-package com.skyost.jail;
+package com.skyost.jail.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -10,10 +10,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import com.skyost.jail.BukkitJail;
 import com.skyost.jail.tasks.ReleasePlayer;
 import com.skyost.jail.util.Utils;
 
-public class Commands implements CommandExecutor {
+public class CommandsExecutor implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(final CommandSender sender, Command cmd, String label, String[] args) {
