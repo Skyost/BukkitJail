@@ -19,7 +19,7 @@ import com.skyost.jail.util.Utils;
 public class EventsListener implements Listener {
 	
 	@EventHandler
-	private static final void onPlayerJoin(PlayerJoinEvent event) {
+	private final void onPlayerJoin(final PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 		if(BukkitJail.isJailed(player.getName())) {	
 			player.teleport(BukkitJail.getJailLocation());
@@ -37,7 +37,7 @@ public class EventsListener implements Listener {
 	}
 	
 	@EventHandler
-	private final static void onPlayerRespawn(PlayerRespawnEvent event) {
+	private final void onPlayerRespawn(final PlayerRespawnEvent event) {
 		if(BukkitJail.isJailed(event.getPlayer().getName())) {	
 			event.getPlayer().teleport(BukkitJail.getJailLocation());
 			event.getPlayer().sendMessage(BukkitJail.getBukkitJailConfig().JailedMessages_2);	
@@ -45,7 +45,7 @@ public class EventsListener implements Listener {
 	}
 	
 	@EventHandler
-	private static final void onPlayerInteract(PlayerInteractEvent event) {
+	private static final void onPlayerInteract(final PlayerInteractEvent event) {
 		if(!BukkitJail.getBukkitJailConfig().JailedCanInteract) {
 			if(BukkitJail.isJailed(event.getPlayer().getName())) {
 				Action act = event.getAction();
@@ -58,7 +58,7 @@ public class EventsListener implements Listener {
 	}
 	
 	@EventHandler
-	private static final void onPlayerChat(AsyncPlayerChatEvent event) {
+	private static final void onPlayerChat(final AsyncPlayerChatEvent event) {
 		if(!BukkitJail.getBukkitJailConfig().JailedCanChat) {
 			if(BukkitJail.isJailed(event.getPlayer().getName())) {
 				event.setCancelled(true);
@@ -68,7 +68,7 @@ public class EventsListener implements Listener {
 	}
 	
 	@EventHandler
-	private static final void onPlayerCommand(PlayerCommandPreprocessEvent event) {
+	private static final void onPlayerCommand(final PlayerCommandPreprocessEvent event) {
 		if(!BukkitJail.getBukkitJailConfig().JailedCanUseCommand) {
 			if(BukkitJail.isJailed(event.getPlayer().getName())) {
 				event.setCancelled(true);
@@ -78,7 +78,7 @@ public class EventsListener implements Listener {
 	}
 	
 	@EventHandler
-	private static final void onPlayerMove(PlayerMoveEvent event) {
+	private static final void onPlayerMove(final PlayerMoveEvent event) {
 		if(!BukkitJail.getBukkitJailConfig().JailedCanMove) {
 			if(BukkitJail.isJailed(event.getPlayer().getName())) {
 				event.setTo(event.getFrom());
@@ -88,7 +88,7 @@ public class EventsListener implements Listener {
 	}
 	
 	@EventHandler
-	private static final void onPlayerInventoryOpen(InventoryOpenEvent event) {
+	private static final void onPlayerInventoryOpen(final InventoryOpenEvent event) {
 		if(event.getPlayer() instanceof Player) {
 			Player player = (Player)event.getPlayer();
 			if(!BukkitJail.getBukkitJailConfig().JailedCanOpenInventory) {
@@ -99,4 +99,5 @@ public class EventsListener implements Listener {
 			}
 		}
 	}
+	
 }
