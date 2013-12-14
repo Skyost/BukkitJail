@@ -1,4 +1,4 @@
-package com.skyost.jail.util;
+package fr.skyost.jail.utils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

@@ -1,5 +1,5 @@
 name: BukkitJail
-main: com.skyost.jail.BukkitJail
+main: fr.skyost.jail.BukkitJail
 description: Simple jail plugin.
 version: 0.2.6
 author: Skyost

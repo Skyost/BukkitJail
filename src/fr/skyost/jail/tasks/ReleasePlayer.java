@@ -1,8 +1,9 @@
-package com.skyost.jail.tasks;
+package fr.skyost.jail.tasks;
 
 import org.bukkit.Bukkit;
-import com.skyost.jail.BukkitJail;
-import com.skyost.jail.util.Utils;
+
+import fr.skyost.jail.BukkitJail;
+import fr.skyost.jail.utils.Utils;
 
 public class ReleasePlayer implements Runnable {
 	

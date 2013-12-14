@@ -1,4 +1,4 @@
-package com.skyost.jail.listeners;
+package fr.skyost.jail.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -10,9 +10,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import com.skyost.jail.BukkitJail;
-import com.skyost.jail.tasks.ReleasePlayer;
-import com.skyost.jail.util.Utils;
+import fr.skyost.jail.BukkitJail;
+import fr.skyost.jail.tasks.ReleasePlayer;
+import fr.skyost.jail.utils.Utils;
 
 public class CommandsExecutor implements CommandExecutor {
 

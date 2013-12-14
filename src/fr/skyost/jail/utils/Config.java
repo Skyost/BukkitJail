@@ -1,4 +1,4 @@
-package com.skyost.jail.util;
+package fr.skyost.jail.utils;
 
 import java.io.BufferedWriter;
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.skyost.jail.listeners;
+package fr.skyost.jail.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -13,8 +13,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
-import com.skyost.jail.BukkitJail;
-import com.skyost.jail.util.Utils;
+import fr.skyost.jail.BukkitJail;
+import fr.skyost.jail.utils.Utils;
 
 public class EventsListener implements Listener {
 	

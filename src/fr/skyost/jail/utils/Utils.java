@@ -1,4 +1,4 @@
-package com.skyost.jail.util;
+package fr.skyost.jail.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,7 +7,7 @@ import java.util.Properties;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 
-import com.skyost.jail.BukkitJail;
+import fr.skyost.jail.BukkitJail;
 
 public class Utils {
 

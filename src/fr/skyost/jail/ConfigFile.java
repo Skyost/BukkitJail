@@ -1,4 +1,4 @@
-package com.skyost.jail;
+package fr.skyost.jail;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import org.bukkit.GameMode;
 import org.bukkit.plugin.Plugin;
 
-import com.skyost.jail.util.Config;
+import fr.skyost.jail.utils.Config;
 
 public class ConfigFile extends Config {
 	public ConfigFile(Plugin plugin) {

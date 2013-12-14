@@ -1,4 +1,4 @@
-package com.skyost.jail;
+package fr.skyost.jail;
 
 import java.io.IOException;
 import java.util.Map.Entry;
@@ -10,13 +10,13 @@ import org.bukkit.WorldCreator;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.skyost.jail.listeners.CommandsExecutor;
-import com.skyost.jail.listeners.EventsListener;
-import com.skyost.jail.tasks.ReleasePlayer;
-import com.skyost.jail.util.Updater;
-import com.skyost.jail.util.Metrics;
-import com.skyost.jail.util.Utils;
-import com.skyost.jail.util.Metrics.Graph;
+import fr.skyost.jail.listeners.CommandsExecutor;
+import fr.skyost.jail.listeners.EventsListener;
+import fr.skyost.jail.tasks.ReleasePlayer;
+import fr.skyost.jail.utils.Metrics;
+import fr.skyost.jail.utils.Updater;
+import fr.skyost.jail.utils.Utils;
+import fr.skyost.jail.utils.Metrics.Graph;
 
 public class BukkitJail extends JavaPlugin {
 	
