@@ -17,7 +17,7 @@ import fr.skyost.jail.utils.Utils;
 public class CommandsExecutor implements CommandExecutor {
 
 	@Override
-	public boolean onCommand(final CommandSender sender, Command cmd, String label, String[] args) {
+	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		if(args.length >= 1) {
 			Player player = Bukkit.getPlayer(args[0]);
 			String message;

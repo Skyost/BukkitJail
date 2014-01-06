@@ -10,15 +10,6 @@ import org.bukkit.plugin.Plugin;
 import fr.skyost.jail.utils.Config;
 
 public class ConfigFile extends Config {
-	public ConfigFile(Plugin plugin) {
-		CONFIG_FILE = new File(plugin.getDataFolder(), "config.yml");
-		CONFIG_HEADER = "BukkitJail Configuration";
-		
-		TimeUnits.add("second");
-		TimeUnits.add("minute");
-		TimeUnits.add("hour");
-		TimeUnits.add("day");
-	}
 	
 	public HashMap<String, Integer> JailedData = new HashMap<String, Integer>();
 	public ArrayList<String> TimeUnits = new ArrayList<String>();
@@ -33,11 +24,12 @@ public class ConfigFile extends Config {
 	public int Jail_Yaw = 0;
 	public int Jail_Pitch = 0;
 	
-	public boolean JailedCanInteract = false;
-	public boolean JailedCanChat = true;
-	public boolean JailedCanUseCommand = false;
-	public boolean JailedCanMove = true;
-	public boolean JailedCanOpenInventory = true;
+	public boolean JailedCan_Interact = false;
+	public boolean JailedCan_Chat = true;
+	public boolean JailedCan_UseCommand = false;
+	public boolean JailedCan_Move = true;
+	public boolean JailedCan_OpenInventory = true;
+	public boolean JailedCan_DropItem = false;
 	
 	public String JailedMessages_1 = "§2/player/ is now jailed.";
 	public String JailedMessages_2 = "§4Your are in the jail, don't cry !";
@@ -50,4 +42,15 @@ public class ConfigFile extends Config {
 	public String JailedMessages_9 = "§4You have been jailed by /player/ because /reason/.";
 	public String JailedMessages_10 = "§4You are in the jail for /n/ /u/.";
 	public String JailedMessages_11 = "§2The jail has been set to your current location !";
+	
+	public ConfigFile(Plugin plugin) {
+		CONFIG_FILE = new File(plugin.getDataFolder(), "config.yml");
+		CONFIG_HEADER = "BukkitJail Configuration";
+		
+		TimeUnits.add("second");
+		TimeUnits.add("minute");
+		TimeUnits.add("hour");
+		TimeUnits.add("day");
+	}
+	
 }
